@@ -1,1 +1,1 @@
-# Tip-Calculator-JS
+JAVASCRIPT PROJECTS
