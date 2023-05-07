@@ -1,86 +1,46 @@
 <html>
     <head>
-    <style>
-     td{
-            padding:10px;
-        }
-        p{
-            font-size:20px;
-            font-style:Verdana;
-        }
-        div{
-            margin-left:25%;
-            margin-right:25%;
-            background-color:#336699;
-            border-radius:0.5cm;
+        <style>
+            div{
+                background-color:#db724f;
             padding:25px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  text-align: center;
-        }
-        body{
-            color:white;
-        }
-        input{
-            border:none;
-            border-radius:3px;
-        }
-    </style>
-    </head>
-    <body>
-        <div align=center>
-            <p> Tip Calculator </p>
-             <table>
-                <tr>
-                    <td><span > Bill Amount </span> </td>
-                    <td>
-            <input required id=billamount>
-             </td>
-                </tr>
-                <tr>
-                    <td> 
-                   <span> Tip Percentage </span> </td>
-              <td>
-            <input  id=tippercentage type=text required>
-             </td>
-                </tr>
-                <tr>
-                    <td>
-             <span> Tip Amount </span> 
-            </td>
-              <td>
-            <input disabled id=dis1>
-             </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span> Total Amount </span> 
-             </td>
-             <td> 
-            <input disabled id=dis2>
-            </td>
-                </tr>
-            </table>
-            <br>
-            <button onclick=calculate()> Calculate </button>
-            <script>
-             function calculate()
-            {
-                var d=document.getElementById("billamount").value;
-                var e=document.getElementById("tippercentage").value;
-                if(d=='' || e=='')
-                {
-                    document.getElementById("dis1").value="Not Possible";
-                }
-                else 
-                {
-
-                var tip=(parseInt(d)*parseInt(e))/100;
-                document.getElementById("dis1").value=tip;
-                document.getElementById("dis2").value=parseInt(d)+parseInt(tip);
-                }
+            margin-left:7cm;
+            margin-right:7cm;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,1);
+  transition: 0.3s;
+  border-radius: 5px;
             }
-            </script>
-        </div>
-       
-    </body>
+            button{
+                width:5cm;
+                height:1.5cm;
+                font-style:Sans-serif;
+                border:none;
+                background-color:#de3568;
+                border-radius:7px;
+                color:#d4c5c9;
+                font-size:20px;
+            }
+            p{
+                font-size:20px;
+                color:#0f0f0f;
+            }
+        </style>
+    </head>
+    <body id="body">
+        <div align=center>
+            <p> Random Colour Generator</p>
+            <br>
+        <button onclick=add()> Generate Random Color </button>
+        <p id="p"> </p>
+         </div>
+        <p style="color:red"> </p>
+    <script>
+    function add()
+    {
+const a='#'+Math.floor(Math.random()*16777215).toString(16);
+document.getElementById("p").innerHTML=a;
+document.body.style.backgroundColor = a;
+    }
+    </script>
+     </body>
 </html>
