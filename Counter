@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title> Counter </title>
+        <style>
+            div{
+                width:30%;
+                padding:25px;
+                background-color: rgb(228, 223, 220);
+                margin-top:5cm;
+                margin-left:30%;
+                border-radius:25px;
+            }
+            button{
+                border:1px double black;
+                background:none;
+                cursor:pointer;
+                padding:10px;
+                border-radius:5px;
+            }
+            p{
+                font-size:40px;
+            }
+        </style>
+    </head>
+    <body>
+        <div align=center>
+            <h1> Counter </h1>
+            <p id="p"> 0</p> <br> <br>
+            <button onclick="decrease()"> DECREASE </button>
+            &nbsp; &nbsp; 
+            <button onclick="reset()"> RESET </button>
+            &nbsp; &nbsp; 
+            <button onclick="increase()"> INCREASE </button>
+        </div>
+        <script>
+            let a=parseInt(document.getElementById("p").innerHTML);
+            document.getElementById("p").style.cssText="color:green";
+            function reset()
+            {
+                a=0;
+                document.getElementById("p").innerHTML=a;
+            }
+            function increase()
+            {
+                a=a+1;
+                document.getElementById("p").innerHTML=a;
+            }
+            function decrease()
+            {
+                a=a-1;
+                document.getElementById("p").innerHTML=a;
+            }
+        </script>
+    </body>
+</html>
