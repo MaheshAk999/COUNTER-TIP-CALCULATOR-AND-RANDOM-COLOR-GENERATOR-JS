@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <style>
+            input
+            {
+                border:2px solid black;
+                border-radius:5px;
+                width:50px;
+                height:50px;
+                text-align:center;
+                font-family:Verdana;
+                font-size:25px;
+                color:#0000e6;
+                outline:none;
+            }
+            button
+            {
+                font-size:25px;
+            }
+            #input{
+                color:white;
+                background-color:#fca103;
+            }
+              body {
+	margin: 0;
+	padding: 0;
+	background-color: white;
+}
+
+.block {
+	position: relative;
+	margin-top: 100px;
+	margin-left:9cm;
+	margin-bottom:100px;
+
+background-color:#00cc7a;
+}
+
+.block:before, .block:after {
+	content: '';
+	position: absolute;
+	left: -2px;
+	top: -2px;
+	background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+		#0000ff, #00ff00,#ffff00, #ff0000);
+	background-size: 400%;
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	z-index: -1;
+	animation: steam 20s linear infinite;
+}
+
+@keyframes steam {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
+.block:after {
+	filter: blur(50px);
+}
+        </style>
+    </head>
+    
+    <div class=block align=center style="border:3px solid red; padding:50px; margin-right:350px; margin-left:350px; background-color:#00cc7a; color:red ">
+        <input type=text id=answer style="width:340px; height:50px" placeholder="Enter input">  <br> <br>
+        <input type=button value='1' onclick=answer.value=document.getElementById("answer").value+="1";>  &nbsp; 
+        <input type=button value='2' onclick=answer.value+="2">  &nbsp; 
+        <input type=button value='3' onclick=answer.value+="3">  &nbsp; 
+        <input type=button value='4' onclick=answer.value+="4">  <br> <br>
+        <input type=button value='5' onclick=answer.value+="5">  &nbsp; 
+        <input type=button value='6' onclick=answer.value+="6">  &nbsp; 
+        <input type=button value='7' onclick=answer.value+="7" >  &nbsp; 
+        
+        <input type=button value='8' onclick=answer.value+="8">  <br> <br>
+        <input type=button value='9' onclick=answer.value+="9">  &nbsp; 
+        <input type=button value='0' onclick=answer.value+="0">  &nbsp; 
+        <input type=button value='+' onclick=answer.value+="+">  &nbsp; 
+        <input type=button value='-' onclick=answer.value+="-">  <br> <br>
+        <input type=button value='/' onclick=answer.value+="/">  &nbsp; 
+	  <input type=button  value="c" onclick=answer.value="" >  &nbsp; 
+        <input type=button value='*' onclick=answer.value+="*">  &nbsp; 
+                <input type=button value='=' onclick=answer.value=eval(answer.value); id=input>  <br> <br>
+        </div>
+</html>
+
+
